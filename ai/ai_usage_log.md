@@ -68,4 +68,4 @@ Required per University of Scranton AI Policy, HamSCI Generative AI Use Agreemen
 - **Sections/Files Affected**: `worksheets/cookie_waves/cookie_waves.tex` and `.pdf`, `README.md`
 - **Nature of Contribution**: Edit (text, figure, layout)
 - **Human Review Status**: Partially reviewed
-- **Git Hash**: [filled in after committing]
+- **Git Hash**: e760807 (PR w2naf-academia/big_math_little_kids#5)
