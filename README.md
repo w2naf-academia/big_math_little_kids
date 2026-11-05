@@ -7,10 +7,14 @@ answer key on its own page.
 
 ## Worksheets
 
+Listed in teaching order. The last three build up to Euler's equation.
+
 | Worksheet | Big idea | PDF |
 | --- | --- | --- |
 | **The Cookie Countdown** | Rates, a first differential equation (dC/dt = −20), and related rates through chocolate chips | [cookie_countdown.pdf](worksheets/cookie_countdown/cookie_countdown.pdf) |
-| **The Cookie Circle** | Oscar's opposite trick (×(−1)) and Elmo's quarter turn (×*i*), Cookie Monster's cookie map (the complex plane), π from a cup and string, and Elmo's walk around a giant cookie: e<sup>iπ</sup> + 1 = 0 | [cookie_circle.pdf](worksheets/cookie_circle/cookie_circle.pdf) |
+| **The Count's Square Cookies** | Squares and square roots with cookie trays, why (−3) × (−3) = 9, and why j = +√−1: the turn that, done twice, turns you around. Snuffy, Big Bird's "imaginary" friend, lives at j | [count_square_cookies.pdf](worksheets/count_square_cookies/count_square_cookies.pdf) |
+| **Cookie Monster's Growing Cookie Jar** | Where e comes from: a jar that grows in more and smaller steps (512, 576, 625, …) approaches e ≈ 2.72 jarfuls | [growing_cookie_jar.pdf](worksheets/growing_cookie_jar/growing_cookie_jar.pdf) |
+| **The Cookie Circle** | Oscar's opposite trick (×(−1)) and Elmo's quarter turn (×*j*, the engineers' imaginary unit), Cookie Monster's cookie map (the complex plane), π from a cup and string, and Elmo's walk around a giant cookie: e<sup>jπ</sup> + 1 = 0 | [cookie_circle.pdf](worksheets/cookie_circle/cookie_circle.pdf) |
 
 Print the PDFs directly. To leave the answers out of student copies, skip the last page.
 

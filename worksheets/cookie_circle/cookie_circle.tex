@@ -147,7 +147,7 @@ $(-1) \times (-1) = $ \blank[1.6cm] & Did Elmo turn around? \blank[2cm] \\
 
 Nothing on the number line works! Elmo needs a brand new idea.
 
-\section{Elmo's quarter turn, $i$}
+\section{Elmo's quarter turn, $j$}
 
 \begin{tryit}
 \textbf{Try it!} Do a half turn using \textbf{two quarter turns}: turn left a little (a quarter
@@ -164,33 +164,35 @@ turn), then turn left again. You are facing backwards. It worked!
   \foreach \n in {-3,...,-1,1,2,3} \draw[itc] (0.1,\n) -- (-0.1,\n);
   \node[below right, font=\small] at (2,0) {$2$};
   \node[below left, font=\small] at (-2,0) {$-2$};
-  \node[right, font=\small, itc] at (0.1,2) {$2i$};
-  \node[right, font=\small, itc] at (0.1,-2) {$-2i$};
+  \node[right, font=\small, itc] at (0.1,2) {$2j$};
+  \node[right, font=\small, itc] at (0.1,-2) {$-2j$};
   \fill[elmo] (2,0) circle (0.12);
   \fill[itc] (0,2) circle (0.12);
   \fill[oscar] (-2,0) circle (0.12);
   \draw[-{Stealth}, itc, line width=1pt] (2.15,0.3) to[bend right=35]
-    node[above right, font=\small] {$\times i$} (0.3,2.15);
+    node[above right, font=\small] {$\times j$} (0.3,2.15);
   \draw[-{Stealth}, itc, line width=1pt] (-0.3,2.15) to[bend right=35]
-    node[above left, font=\small] {$\times i$} (-2.15,0.3);
+    node[above left, font=\small] {$\times j$} (-2.15,0.3);
   \node[font=\small, align=center] at (4.6,2.5) {\textcolor{itc}{\textbf{new}}\\
     \textcolor{itc}{\textbf{up-down line!}}};
 \end{tikzpicture}
 \end{center}
 
 \begin{bigidea}
-Mathematicians invented a new number called $\boldsymbol{i}$. Multiplying by $i$ is a
+People invented a new number for this. Mathematicians call it $i$, but \textbf{engineers},
+who build radios and phones, call it $\boldsymbol{j}$ (they already use $i$ for electricity).
+We are engineers today, so we write $\boldsymbol{j}$! Multiplying by $j$ is a
 \textbf{quarter turn} to the left. It makes Elmo dance off the number line onto a new
 \textbf{up-down line}. Numbers on the up-down line are called \textbf{imaginary numbers}.
 
-Two quarter turns make a half turn, so \quad $i \times i = -1$. \quad Riddle solved!
+Two quarter turns make a half turn, so \quad $j \times j = -1$. \quad Riddle solved!
 \end{bigidea}
 
 % ================= Turn table =================
 \newpage
 \section{The turning pattern}
 
-Elmo starts at $1$ and keeps multiplying by $i$. Each time, Elmo does one more quarter turn,
+Elmo starts at $1$ and keeps multiplying by $j$. Each time, Elmo does one more quarter turn,
 and The Count counts them: \emph{``ONE quarter turn! TWO quarter turns! Ah ah ah!''}
 Use the picture on the page before to fill in where Elmo lands.
 
@@ -203,7 +205,7 @@ Use the picture on the page before to fill in where Elmo lands.
 \textbf{\color{white}Quarter turns} & \textbf{\color{white}Elmo is at} & \textbf{\color{white}Pointing} \\
 \hline
 0 & $1$ & right \\ \hline
-1 & $i$ & up \\ \hline
+1 & $j$ & up \\ \hline
 2 &     &    \\ \hline
 3 &     &    \\ \hline
 4 &     &    \\ \hline
@@ -219,7 +221,7 @@ Use the picture on the page before to fill in where Elmo lands.
 \section{Cookie Monster's cookie map}
 
 Now numbers can go \textbf{sideways} and \textbf{up}! Cookie Monster hid cookies all over the
-map. A number like $2 + 1i$ is an address: walk $2$ steps right, then $1$ step up.
+map. A number like $2 + 1j$ is an address: walk $2$ steps right, then $1$ step up.
 \emph{``Me want cookie at that address!''}
 
 \begin{center}
@@ -229,7 +231,7 @@ map. A number like $2 + 1i$ is an address: walk $2$ steps right, then $1$ step u
   \draw[-{Stealth}, line width=1pt, itc] (0,-3.6) -- (0,3.8) node[above, font=\small] {up};
   \foreach \n in {-3,...,-1,1,2,3} {
     \node[below, font=\small] at (\n,0) {$\n$};
-    \node[left, font=\small, itc] at (0,\n) {$\n i$};
+    \node[left, font=\small, itc] at (0,\n) {$\n j$};
   }
   % cookies
   \foreach \x/\y/\l in {2/1/A, -2/3/B, 3/-2/C} {
@@ -239,15 +241,15 @@ map. A number like $2 + 1i$ is an address: walk $2$ steps right, then $1$ step u
 \end{tikzpicture}
 \end{center}
 
-\question Cookie \textbf{A} is at $2 + 1i$. Write the addresses of cookies B and C.
+\question Cookie \textbf{A} is at $2 + 1j$. Write the addresses of cookies B and C.
 
 \begin{center}
-\textbf{B}: \blank[1.2cm] $+$ \blank[1.2cm]$\,i$
+\textbf{B}: \blank[1.2cm] $+$ \blank[1.2cm]$\,j$
 \qquad
-\textbf{C}: \blank[1.2cm] $+$ \blank[1.2cm]$\,i$
+\textbf{C}: \blank[1.2cm] $+$ \blank[1.2cm]$\,j$
 \end{center}
 
-\question Cookie Monster hid one more cookie at $1 + 3i$. Draw it on the map!
+\question Cookie Monster hid one more cookie at $1 + 3j$. Draw it on the map!
 
 % ================= Circle and Euler =================
 \newpage
@@ -270,7 +272,7 @@ If a cookie is 2 steps wide, the edge all the way around is $2\pi$ steps long, s
 \end{bigidea}
 
 Elmo starts at $1$ and walks around the edge of Cookie Monster's giant cookie, which is 2 steps
-wide. Fill in the boxes with where Elmo lands: $1$, $i$, $-1$, or $-i$.
+wide. Fill in the boxes with where Elmo lands: $1$, $j$, $-1$, or $-j$.
 
 \begin{center}
 \begin{tikzpicture}[scale=1.4]
@@ -298,21 +300,22 @@ wide. Fill in the boxes with where Elmo lands: $1$, $i$, $-1$, or $-i$.
 
 \begin{mathclub}{How a scientist writes ``walk around the cookie''}
 A mathematician named \textbf{Leonhard Euler} (say ``OY-ler'') found a way to write Elmo's
-walk around a circle. There is a special number called $\boldsymbol{e}$, about $2.72$. When you write
+walk around a circle. It uses the special number $\boldsymbol{e}$, about $2.72$, from Cookie
+Monster's Growing Cookie Jar. When you write
 \[
-  e^{\,i\,\times\,\text{steps}}
+  e^{\,j\,\times\,\text{steps}}
 \]
 it means: \textbf{start at 1 and walk that many steps around the edge of the cookie.}
 \end{mathclub}
 
 \question Walk $\pi$ steps (halfway around). Where does Elmo land?
 \[
-  e^{\,i\pi} = \text{\blank[2cm]}
+  e^{\,j\pi} = \text{\blank[2cm]}
 \]
 
 \question Now add 1 to both sides. $\;-1 + 1 = $ \blank[1.6cm]. So:
 \[
-  e^{\,i\pi} + 1 = \text{\blank[2cm]}
+  e^{\,j\pi} + 1 = \text{\blank[2cm]}
 \]
 
 % ================= Five famous numbers =================
@@ -322,7 +325,7 @@ it means: \textbf{start at 1 and walk that many steps around the edge of the coo
 \begin{center}
 \begin{tcolorbox}[enhanced, width=0.7\linewidth, colback=softyellow, colframe=gold,
   boxrule=1.2pt, arc=4mm, halign=center]
-{\Huge $e^{\,i\pi} + 1 = 0$}
+{\Huge $e^{\,j\pi} + 1 = 0$}
 \end{tcolorbox}
 \end{center}
 
@@ -333,7 +336,7 @@ it means: \textbf{start at 1 and walk that many steps around the edge of the coo
 
 \begin{center}
 \begin{tikzpicture}
-  \foreach \y/\n in {0/$0$, -1.1/$1$, -2.2/$i$, -3.3/$\pi$, -4.4/$e$}
+  \foreach \y/\n in {0/$0$, -1.1/$1$, -2.2/$j$, -3.3/$\pi$, -4.4/$e$}
     \node[draw=itc, line width=0.8pt, circle, minimum size=0.9cm, font=\Large] at (0,\y) {\n};
   \foreach \y in {0,-1.1,-2.2,-3.3,-4.4} {
     \fill (0.6,\y) circle (0.05);
@@ -351,16 +354,18 @@ it means: \textbf{start at 1 and walk that many steps around the edge of the coo
 \begin{tcolorbox}[enhanced, colback=white, colframe=robo, boxrule=1pt, arc=3mm,
   height=5.5cm, title={\textbf{Draw it!}}, colbacktitle=robo, coltitle=white]
 Draw Elmo walking halfway around Cookie Monster's giant cookie, from $1$ to $-1$. Write
-$e^{i\pi} = -1$ next to your picture.
+$e^{j\pi} = -1$ next to your picture.
 \end{tcolorbox}
 
-{\small\color{gray}\textbf{For teachers:} multiplying by $i$ rotates the complex plane by
-$90^\circ$ counterclockwise, which is why $i^2 = -1$ reads as two quarter turns making a half
-turn. Euler's formula $e^{i\theta} = \cos\theta + i\sin\theta$ places $e^{i\theta}$ on the unit
+{\small\color{gray}\textbf{For teachers:} this worksheet uses the engineering
+convention $j = \sqrt{-1}$ (in electrical engineering $i$ denotes current); mathematics texts
+write $i$, so $e^{j\pi} + 1 = 0$ is the same as $e^{i\pi} + 1 = 0$. Multiplying by $j$ rotates the complex plane by
+$90^\circ$ counterclockwise, which is why $j^2 = -1$ reads as two quarter turns making a half
+turn. Euler's formula $e^{j\theta} = \cos\theta + j\sin\theta$ places $e^{j\theta}$ on the unit
 circle at arc length $\theta$ from $1$ (counterclockwise), so $\theta = \pi$ lands on $-1$.
 The ``cookie 2 steps wide'' is the unit circle (radius 1), whose circumference is $2\pi$.
 Why $e$ in particular is the base that turns ``growth'' into ``rotation'' is a calculus fact
-($\tfrac{d}{d\theta}e^{i\theta} = i\,e^{i\theta}$: the velocity is always a quarter turn from
+($\tfrac{d}{d\theta}e^{j\theta} = j\,e^{j\theta}$: the velocity is always a quarter turn from
 the position) and is beyond this worksheet. Sesame Street characters appear by name only, for
 classroom use; this worksheet is not affiliated with or endorsed by Sesame Workshop.}
 
@@ -380,18 +385,18 @@ classroom use; this worksheet is not affiliated with or endorsed by Sesame Works
 Turning table &
   \begin{tabular}[t]{@{}lll@{}}
     2 turns: & $-1$, & left \\
-    3 turns: & $-i$, & down \\
+    3 turns: & $-j$, & down \\
     4 turns: & $1$, & right
   \end{tabular} \\ \hline
 4 & 4 quarter turns \\ \hline
 5 & $1$ (8 is two groups of 4) \\ \hline
-6 & B is $-2 + 3i$; C is $3 + (-2)i$, which is also written $3 - 2i$ \\ \hline
+6 & B is $-2 + 3j$; C is $3 + (-2)j$, which is also written $3 - 2j$ \\ \hline
 7 & A cookie one step right, three steps up \\ \hline
 8 & A little more than 3 (about 3.14 if measured carefully) \\ \hline
-Circle boxes & Quarter way: $i$; halfway: $-1$; three-quarters: $-i$ \\ \hline
+Circle boxes & Quarter way: $j$; halfway: $-1$; three-quarters: $-j$ \\ \hline
 9 & $-1$ \\ \hline
-10 & $0$; so $e^{i\pi} + 1 = 0$ \\ \hline
-11 & $0$: nothing at all; $1$: where Elmo starts; $i$: the quarter-turn number;
+10 & $0$; so $e^{j\pi} + 1 = 0$ \\ \hline
+11 & $0$: nothing at all; $1$: where Elmo starts; $j$: the quarter-turn number;
      $\pi$: halfway around, about 3.14; $e$: Euler's special number, about 2.72 \\ \hline
 \end{tabularx}
 \end{center}
