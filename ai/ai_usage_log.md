@@ -32,4 +32,4 @@ Required per University of Scranton AI Policy, HamSCI Generative AI Use Agreemen
   `README.md`, `CLAUDE.md` (Worksheet Conventions)
 - **Nature of Contribution**: Edit (worksheet text and figures), documentation
 - **Human Review Status**: Partially reviewed
-- **Git Hash**: [filled in after committing]
+- **Git Hash**: 53717fc (PR w2naf-academia/big_math_little_kids#2)
