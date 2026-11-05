@@ -17,9 +17,13 @@
 \usepackage{needspace}
 
 % ---------- Colors ----------
-\definecolor{robo}{HTML}{1F6FB5}
-\definecolor{robodark}{HTML}{164E80}
-\definecolor{itc}{HTML}{6B3FA0}
+\definecolor{robo}{HTML}{1F6FB5}      % Cookie Monster blue
+\definecolor{robodark}{HTML}{7A4A22}  % cookie brown
+\definecolor{elmo}{HTML}{D32F2F}
+\definecolor{oscar}{HTML}{4C8C2B}
+\definecolor{cookie}{HTML}{C68B4E}
+\definecolor{chip}{HTML}{3B2314}
+\definecolor{itc}{HTML}{6B3FA0}     % The Count purple
 \definecolor{flip}{HTML}{C0392B}
 \definecolor{softyellow}{HTML}{FFF6DD}
 \definecolor{softblue}{HTML}{E8F1FA}
@@ -35,25 +39,19 @@
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
-\fancyfoot[C]{\small\color{gray}Robo's Turning Numbers \textperiodcentered\ page \thepage}
+\fancyfoot[C]{\small\color{gray}The Cookie Circle \textperiodcentered\ page \thepage}
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{6pt}
 
 % ---------- Helpers ----------
-% A little robot
-\newcommand{\robo}[1][1]{%
+% A cookie with chocolate chips
+\newcommand{\cookie}[1][1]{%
   \begin{tikzpicture}[scale=#1, baseline=-0.6ex]
-    \draw[robodark, line width=0.8pt] (0,0.55) -- (0,0.75);
-    \fill[flip] (0,0.78) circle (0.06);
-    \fill[robo] (-0.35,0.05) rectangle (0.35,0.55);
-    \fill[white] (-0.17,0.3) circle (0.08);
-    \fill[white] (0.17,0.3) circle (0.08);
-    \fill[robodark] (-0.17,0.3) circle (0.035);
-    \fill[robodark] (0.17,0.3) circle (0.035);
-    \fill[robodark] (-0.28,-0.5) rectangle (0.28,0.02);
-    \fill[robo] (-0.22,-0.75) rectangle (-0.08,-0.5);
-    \fill[robo] (0.08,-0.75) rectangle (0.22,-0.5);
+    \fill[cookie] (0,0) circle (0.5);
+    \draw[robodark, line width=0.8pt] (0,0) circle (0.5);
+    \foreach \x/\y in {-0.2/0.2, 0.15/0.25, 0.25/-0.1, -0.1/-0.25, -0.28/-0.05, 0.05/0.0}
+      \fill[chip] (\x,\y) circle (0.06);
   \end{tikzpicture}}
 
 \newcommand{\blank}[1][3cm]{\underline{\hspace{#1}}}
@@ -77,10 +75,10 @@
 
 % ================= Title =================
 \begin{center}
-  {\robo[0.9]}\\[6pt]
-  {\Huge\bfseries\color{robodark} Robo's Turning Numbers}\\[4pt]
+  {\cookie[0.9]\hspace{0.6em}\cookie[0.9]\hspace{0.6em}\cookie[0.9]}\\[6pt]
+  {\Huge\bfseries\color{robodark} The Cookie Circle}\\[4pt]
   {\Large Imaginary Numbers and Euler's Equation}\\[6pt]
-  {\small\color{gray} October 31, 2026 \textperiodcentered\ Nathaniel}
+  {\small\color{gray} November 4, 2026 \textperiodcentered\ Nathaniel}
 \end{center}
 
 \vspace{2pt}
@@ -89,14 +87,15 @@ Name: \blank[6cm] \hfill Date: \blank[4cm]
 % ================= The story =================
 \section{The story}
 
-\textbf{\color{robo}Robo the Robot} lives on a number line. Robo stands on a number and faces
-the way the numbers grow. Robo knows two tricks: \textbf{walking} and \textbf{turning}.
+\textbf{\color{elmo}Elmo} loves to dance on the number line! Elmo stands on a number and faces
+the way the numbers grow. Elmo knows two dance moves: \textbf{walking} and \textbf{turning}.
 
-One day a mathematician asks Robo a very tricky riddle. To solve it, Robo will discover a
-whole new kind of number, and one of the most famous equations in all of math!
+\textbf{\color{robo}Cookie Monster} has baked one GIANT cookie, and \textbf{\color{itc}The Count}
+has a very tricky riddle. To solve it, Elmo will discover a whole new kind of number, and one
+of the most famous equations in all of math!
 
 % ================= Flip =================
-\section{Trick 1: times $-1$ means ``turn around''}
+\section{Oscar's opposite trick: times $-1$ means ``turn around''}
 
 \begin{center}
 \begin{tikzpicture}[x=0.95cm]
@@ -106,23 +105,24 @@ whole new kind of number, and one of the most famous equations in all of math!
     \draw (\n,0.12) -- (\n,-0.12);
     \node[below, font=\small] at (\n,-0.12) {$\n$};
   }
-  \fill[robo] (3,0) circle (0.12);
-  \fill[flip] (-3,0) circle (0.12);
-  \draw[-{Stealth}, flip, line width=1pt] (3,0.25) to[bend right=40]
+  \fill[elmo] (3,0) circle (0.12);
+  \fill[oscar] (-3,0) circle (0.12);
+  \draw[-{Stealth}, oscar, line width=1pt] (3,0.25) to[bend right=40]
     node[above, font=\small, black] {$\times(-1)$: turn around!} (-3,0.25);
 \end{tikzpicture}
 \end{center}
 
 \begin{bigidea}
-Multiplying by $-1$ is like Robo doing a \textbf{half turn}: Robo spins around to face the
-other way, and the number jumps to the other side of 0. So $3 \times (-1) = -3$.
+\textbf{\color{oscar}Oscar the Grouch} loves opposites! His favorite trick is multiplying by
+$-1$. It is a \textbf{half turn}: Elmo spins around to face the other way, and the number jumps
+to the other side of 0. So $3 \times (-1) = -3$. \emph{``Scram! Go the other way!''}
 \end{bigidea}
 
 \question $4 \times (-1) = $ \blank[2cm]
 
 \vspace{4pt}
 \question Turn around \emph{two} times: $2 \times (-1) \times (-1) = $ \blank[2cm]\\[4pt]
-Which way is Robo facing now? \blank[3cm]
+Which way is Elmo facing now? \blank[3cm]
 
 \begin{tryit}
 \textbf{Try it!} Stand up and face the board. Do a half turn. Do another half turn. Which way
@@ -133,21 +133,21 @@ are you facing?
 \newpage
 \section{The tricky riddle}
 
-The mathematician asks: \emph{``Is there a number that, if you multiply by it \textbf{two}
-times, makes you turn around?''}
+\textbf{\color{itc}The Count} asks: \emph{``Is there a number that, if you multiply by it
+\textbf{two} times, makes Elmo turn around? Ah ah ah!''}
 
-\question Robo tries. Fill in the blanks.
+\question Elmo tries. Fill in the blanks.
 
 \begin{center}
 \begin{tabular}{l@{\hspace{2em}}l}
-$1 \times 1 = $ \blank[1.6cm] & Did Robo turn around? \blank[2cm] \\
-$(-1) \times (-1) = $ \blank[1.6cm] & Did Robo turn around? \blank[2cm] \\
+$1 \times 1 = $ \blank[1.6cm] & Did Elmo turn around? \blank[2cm] \\
+$(-1) \times (-1) = $ \blank[1.6cm] & Did Elmo turn around? \blank[2cm] \\
 \end{tabular}
 \end{center}
 
-Nothing on the number line works! Robo needs a brand new idea.
+Nothing on the number line works! Elmo needs a brand new idea.
 
-\section{Trick 2: the quarter turn, $i$}
+\section{Elmo's quarter turn, $i$}
 
 \begin{tryit}
 \textbf{Try it!} Do a half turn using \textbf{two quarter turns}: turn left a little (a quarter
@@ -166,9 +166,9 @@ turn), then turn left again. You are facing backwards. It worked!
   \node[below left, font=\small] at (-2,0) {$-2$};
   \node[right, font=\small, itc] at (0.1,2) {$2i$};
   \node[right, font=\small, itc] at (0.1,-2) {$-2i$};
-  \fill[robo] (2,0) circle (0.12);
+  \fill[elmo] (2,0) circle (0.12);
   \fill[itc] (0,2) circle (0.12);
-  \fill[flip] (-2,0) circle (0.12);
+  \fill[oscar] (-2,0) circle (0.12);
   \draw[-{Stealth}, itc, line width=1pt] (2.15,0.3) to[bend right=35]
     node[above right, font=\small] {$\times i$} (0.3,2.15);
   \draw[-{Stealth}, itc, line width=1pt] (-0.3,2.15) to[bend right=35]
@@ -180,7 +180,7 @@ turn), then turn left again. You are facing backwards. It worked!
 
 \begin{bigidea}
 Mathematicians invented a new number called $\boldsymbol{i}$. Multiplying by $i$ is a
-\textbf{quarter turn} to the left. It makes Robo walk off the number line onto a new
+\textbf{quarter turn} to the left. It makes Elmo dance off the number line onto a new
 \textbf{up-down line}. Numbers on the up-down line are called \textbf{imaginary numbers}.
 
 Two quarter turns make a half turn, so \quad $i \times i = -1$. \quad Riddle solved!
@@ -190,8 +190,9 @@ Two quarter turns make a half turn, so \quad $i \times i = -1$. \quad Riddle sol
 \newpage
 \section{The turning pattern}
 
-Robo starts at $1$ and keeps multiplying by $i$. Each time, Robo does one more quarter turn.
-Use the picture on the page before to fill in where Robo lands.
+Elmo starts at $1$ and keeps multiplying by $i$. Each time, Elmo does one more quarter turn,
+and The Count counts them: \emph{``ONE quarter turn! TWO quarter turns! Ah ah ah!''}
+Use the picture on the page before to fill in where Elmo lands.
 
 \begin{center}
 \renewcommand{\arraystretch}{1.7}
@@ -199,7 +200,7 @@ Use the picture on the page before to fill in where Robo lands.
 \begin{tabular}{|>{\centering\arraybackslash}p{3.6cm}|>{\centering\arraybackslash}p{3.6cm}|>{\centering\arraybackslash}p{3.6cm}|}
 \hline
 \rowcolor{itc}
-\textbf{\color{white}Quarter turns} & \textbf{\color{white}Robo is at} & \textbf{\color{white}Pointing} \\
+\textbf{\color{white}Quarter turns} & \textbf{\color{white}Elmo is at} & \textbf{\color{white}Pointing} \\
 \hline
 0 & $1$ & right \\ \hline
 1 & $i$ & up \\ \hline
@@ -209,16 +210,17 @@ Use the picture on the page before to fill in where Robo lands.
 \end{tabular}
 \end{center}
 
-\question How many quarter turns bring Robo all the way back to $1$? \blank[2cm]
+\question How many quarter turns bring Elmo all the way back to $1$? \blank[2cm]
 
 \vspace{4pt}
-\question The pattern repeats! Where is Robo after 8 quarter turns? (Count by 4s.) \blank[2cm]
+\question The pattern repeats! Where is Elmo after 8 quarter turns? (Count by 4s.) \blank[2cm]
 
 % ================= Map =================
-\section{Robo's treasure map}
+\section{Cookie Monster's cookie map}
 
-Now numbers can go \textbf{sideways} and \textbf{up}! A number like $2 + 1i$ is an address:
-walk $2$ steps right, then $1$ step up.
+Now numbers can go \textbf{sideways} and \textbf{up}! Cookie Monster hid cookies all over the
+map. A number like $2 + 1i$ is an address: walk $2$ steps right, then $1$ step up.
+\emph{``Me want cookie at that address!''}
 
 \begin{center}
 \begin{tikzpicture}[scale=0.72]
@@ -229,33 +231,32 @@ walk $2$ steps right, then $1$ step up.
     \node[below, font=\small] at (\n,0) {$\n$};
     \node[left, font=\small, itc] at (0,\n) {$\n i$};
   }
-  % treasures
-  \node[star, star points=5, fill=gold, draw=gold!60!black, minimum size=0.55cm, inner sep=0pt] at (2,1) {};
-  \node[font=\bfseries\small] at (2.35,1.4) {A};
-  \fill[flip] (-2,3) circle (0.22);
-  \node[font=\bfseries\small] at (-1.65,3.4) {B};
-  \fill[robo] (3,-2) ++(-0.2,-0.2) rectangle ++(0.4,0.4);
-  \node[font=\bfseries\small] at (3.35,-1.6) {C};
+  % cookies
+  \foreach \x/\y/\l in {2/1/A, -2/3/B, 3/-2/C} {
+    \node at (\x,\y) {\cookie[0.5]};
+    \node[font=\bfseries\small] at (\x+0.42,\y+0.42) {\l};
+  }
 \end{tikzpicture}
 \end{center}
 
-\question The star \textbf{A} is at $2 + 1i$. Write the address of the others.
+\question Cookie \textbf{A} is at $2 + 1i$. Write the addresses of cookies B and C.
 
 \begin{center}
-\textbf{B} (red circle): \blank[1.2cm] $+$ \blank[1.2cm]$\,i$
+\textbf{B}: \blank[1.2cm] $+$ \blank[1.2cm]$\,i$
 \qquad
-\textbf{C} (blue square): \blank[1.2cm] $+$ \blank[1.2cm]$\,i$
+\textbf{C}: \blank[1.2cm] $+$ \blank[1.2cm]$\,i$
 \end{center}
 
-\question Draw an \textbf{X} on the map at $1 + 3i$.
+\question Cookie Monster hid one more cookie at $1 + 3i$. Draw it on the map!
 
 % ================= Circle and Euler =================
 \newpage
-\section{Robo walks around a circle}
+\section{Elmo walks around the giant cookie}
 
 \begin{tryit}
-\textbf{Try it!} Wrap a string once around a cup. Then see how many times the cup's width fits
-along the string.
+\textbf{Try it!} Wrap a string once around a cup (or a real cookie!). Then lay the string
+flat and count how many cup-widths fit along it, like The Count: \emph{``ONE! TWO! THREE!
+And a little bit more! Ah ah ah!''}
 \end{tryit}
 
 \question About how many cup-widths long was the string? \blank[2cm]
@@ -264,21 +265,24 @@ along the string.
 It is always a little more than 3, for \emph{every} circle! That number is called
 \textbf{pi}, written $\boldsymbol{\pi}$. It is about $3.14$.
 
-If a circle is 2 steps wide, the path all the way around is $2\pi$ steps long, so
+If a cookie is 2 steps wide, the edge all the way around is $2\pi$ steps long, so
 \textbf{halfway around is exactly $\pi$ steps}.
 \end{bigidea}
 
-Robo starts at $1$ and walks around a circle that is 2 steps wide. Fill in the boxes with where
-Robo lands: $1$, $i$, $-1$, or $-i$.
+Elmo starts at $1$ and walks around the edge of Cookie Monster's giant cookie, which is 2 steps
+wide. Fill in the boxes with where Elmo lands: $1$, $i$, $-1$, or $-i$.
 
 \begin{center}
-\begin{tikzpicture}[scale=1.7]
+\begin{tikzpicture}[scale=1.4]
+  \fill[cookie] (0,0) circle (1);
+  \foreach \x/\y in {-0.45/0.42, 0.38/0.5, 0.55/-0.3, -0.25/-0.6, -0.65/-0.15, 0.1/0.12, 0.3/-0.7, -0.15/0.65}
+    \fill[chip] (\x,\y) circle (0.07);
+  \draw[line width=1.4pt, robodark] (0,0) circle (1);
+  \draw[-{Stealth}, line width=1.2pt, elmo] (1.12,0.12) arc (6:174:1.12);
+  \node[elmo, font=\small\bfseries, align=center] at (1.55,1.0) {halfway\\$= \pi$ steps};
   \draw[-{Stealth}, line width=0.8pt] (-1.8,0) -- (1.8,0);
   \draw[-{Stealth}, line width=0.8pt, itc] (0,-1.75) -- (0,1.85);
-  \draw[line width=1.4pt, robo] (0,0) circle (1);
-  \draw[-{Stealth}, line width=1.2pt, flip] (1.12,0.12) arc (6:174:1.12);
-  \node[flip, font=\small\bfseries, align=center] at (1.55,1.0) {halfway\\$= \pi$ steps};
-  \fill[robo] (1,0) circle (0.06);
+  \fill[elmo] (1,0) circle (0.07);
   \node[below right, font=\small] at (1,0) {start: $1$};
   \fill (0,1) circle (0.05); \fill (-1,0) circle (0.05); \fill (0,-1) circle (0.05);
   \node[draw, line width=0.8pt, minimum width=1.1cm, minimum height=0.75cm, fill=white] (q1) at (0,1.5) {};
@@ -292,16 +296,16 @@ Robo lands: $1$, $i$, $-1$, or $-i$.
 
 \section{Euler's equation}
 
-\begin{mathclub}{How a scientist writes ``walk around the circle''}
-A mathematician named \textbf{Leonhard Euler} (say ``OY-ler'') found a way to write Robo's
-circle walk. There is a special number called $\boldsymbol{e}$, about $2.72$. When you write
+\begin{mathclub}{How a scientist writes ``walk around the cookie''}
+A mathematician named \textbf{Leonhard Euler} (say ``OY-ler'') found a way to write Elmo's
+walk around a circle. There is a special number called $\boldsymbol{e}$, about $2.72$. When you write
 \[
   e^{\,i\,\times\,\text{steps}}
 \]
-it means: \textbf{start at 1 and walk that many steps around the circle.}
+it means: \textbf{start at 1 and walk that many steps around the edge of the cookie.}
 \end{mathclub}
 
-\question Walk $\pi$ steps (halfway around). Where does Robo land?
+\question Walk $\pi$ steps (halfway around). Where does Elmo land?
 \[
   e^{\,i\pi} = \text{\blank[2cm]}
 \]
@@ -313,7 +317,7 @@ it means: \textbf{start at 1 and walk that many steps around the circle.}
 
 % ================= Five famous numbers =================
 \newpage
-\section{Five famous numbers in one equation}
+\section{The Count's five famous numbers}
 
 \begin{center}
 \begin{tcolorbox}[enhanced, width=0.7\linewidth, colback=softyellow, colframe=gold,
@@ -322,8 +326,8 @@ it means: \textbf{start at 1 and walk that many steps around the circle.}
 \end{tcolorbox}
 \end{center}
 
-Many mathematicians say this is the \textbf{most beautiful equation} in all of math, because it
-uses five famous numbers at once.
+\emph{``FIVE famous numbers in ONE equation! Ah ah ah!''} Many mathematicians say this is the
+\textbf{most beautiful equation} in all of math, because it uses five famous numbers at once.
 
 \question Draw a line from each number to what it means.
 
@@ -337,16 +341,16 @@ uses five famous numbers at once.
   }
   \foreach \y/\t in {0/{The quarter-turn number},
                      -1.1/{Nothing at all},
-                     -2.2/{The special number for Euler's circle walk, about 2.72},
-                     -3.3/{Where Robo starts},
-                     -4.4/{How far halfway around the circle is, about 3.14}}
+                     -2.2/{The special number for Euler's cookie walk, about 2.72},
+                     -3.3/{Where Elmo starts},
+                     -4.4/{How far halfway around the cookie is, about 3.14}}
     \node[right, text width=8.5cm, font=\small] at (5.6,\y) {\t};
 \end{tikzpicture}
 \end{center}
 
 \begin{tcolorbox}[enhanced, colback=white, colframe=robo, boxrule=1pt, arc=3mm,
   height=5.5cm, title={\textbf{Draw it!}}, colbacktitle=robo, coltitle=white]
-Draw Robo walking halfway around the circle, from $1$ to $-1$. Write
+Draw Elmo walking halfway around Cookie Monster's giant cookie, from $1$ to $-1$. Write
 $e^{i\pi} = -1$ next to your picture.
 \end{tcolorbox}
 
@@ -354,10 +358,11 @@ $e^{i\pi} = -1$ next to your picture.
 $90^\circ$ counterclockwise, which is why $i^2 = -1$ reads as two quarter turns making a half
 turn. Euler's formula $e^{i\theta} = \cos\theta + i\sin\theta$ places $e^{i\theta}$ on the unit
 circle at arc length $\theta$ from $1$ (counterclockwise), so $\theta = \pi$ lands on $-1$.
-Robo's ``circle 2 steps wide'' is the unit circle (radius 1), whose circumference is $2\pi$.
+The ``cookie 2 steps wide'' is the unit circle (radius 1), whose circumference is $2\pi$.
 Why $e$ in particular is the base that turns ``growth'' into ``rotation'' is a calculus fact
 ($\tfrac{d}{d\theta}e^{i\theta} = i\,e^{i\theta}$: the velocity is always a quarter turn from
-the position) and is beyond this worksheet.}
+the position) and is beyond this worksheet. Sesame Street characters appear by name only, for
+classroom use; this worksheet is not affiliated with or endorsed by Sesame Workshop.}
 
 % ================= Answer key =================
 \newpage
@@ -381,12 +386,12 @@ Turning table &
 4 & 4 quarter turns \\ \hline
 5 & $1$ (8 is two groups of 4) \\ \hline
 6 & B is $-2 + 3i$; C is $3 + (-2)i$, which is also written $3 - 2i$ \\ \hline
-7 & X one step right, three steps up \\ \hline
+7 & A cookie one step right, three steps up \\ \hline
 8 & A little more than 3 (about 3.14 if measured carefully) \\ \hline
 Circle boxes & Quarter way: $i$; halfway: $-1$; three-quarters: $-i$ \\ \hline
 9 & $-1$ \\ \hline
 10 & $0$; so $e^{i\pi} + 1 = 0$ \\ \hline
-11 & $0$: nothing at all; $1$: where Robo starts; $i$: the quarter-turn number;
+11 & $0$: nothing at all; $1$: where Elmo starts; $i$: the quarter-turn number;
      $\pi$: halfway around, about 3.14; $e$: Euler's special number, about 2.72 \\ \hline
 \end{tabularx}
 \end{center}

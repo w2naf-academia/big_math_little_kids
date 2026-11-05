@@ -10,9 +10,12 @@ answer key on its own page.
 | Worksheet | Big idea | PDF |
 | --- | --- | --- |
 | **The Cookie Countdown** | Rates, a first differential equation (dC/dt = −20), and related rates through chocolate chips | [cookie_countdown.pdf](worksheets/cookie_countdown/cookie_countdown.pdf) |
-| **Robo's Turning Numbers** | Multiplying by −1 and *i* as turns, the complex plane as a treasure map, π from a cup and string, and e<sup>iπ</sup> + 1 = 0 | [robos_turning_numbers.pdf](worksheets/robos_turning_numbers/robos_turning_numbers.pdf) |
+| **The Cookie Circle** | Oscar's opposite trick (×(−1)) and Elmo's quarter turn (×*i*), Cookie Monster's cookie map (the complex plane), π from a cup and string, and Elmo's walk around a giant cookie: e<sup>iπ</sup> + 1 = 0 | [cookie_circle.pdf](worksheets/cookie_circle/cookie_circle.pdf) |
 
 Print the PDFs directly. To leave the answers out of student copies, skip the last page.
+
+The worksheets use Sesame Street characters by name only, for classroom use. They are not
+affiliated with or endorsed by Sesame Workshop.
 
 ## Building from source
 

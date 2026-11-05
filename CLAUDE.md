@@ -52,8 +52,10 @@ big_math_little_kids/
 - Teacher-facing material is kept small: a gray "For teachers" note where needed, and the answer
   key on its own final page so it can be left out of student copies.
 - Mathematics must be correct even when simplified; say in the teacher note what was simplified.
-- Avoid trademarked characters in new worksheets. The Cookie Countdown's Sesame Street framing
-  came from the original draft.
+- Worksheets share a Sesame Street theme (Cookie Monster, The Count, Elmo, Oscar the Grouch,
+  and friends). Characters appear by name, voice and color only: no character artwork or logos.
+  Drawings are generic (cookies, dots, arrows). A worksheet's teacher note says it is not
+  affiliated with or endorsed by Sesame Workshop.
 
 ## Curated Documents
 
