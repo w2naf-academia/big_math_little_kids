@@ -1,0 +1,394 @@
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage[margin=0.85in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[scaled=0.95]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage[table]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,shapes.geometric}
+\usepackage[most]{tcolorbox}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{needspace}
+
+% ---------- Colors ----------
+\definecolor{robo}{HTML}{1F6FB5}
+\definecolor{robodark}{HTML}{164E80}
+\definecolor{itc}{HTML}{6B3FA0}
+\definecolor{flip}{HTML}{C0392B}
+\definecolor{softyellow}{HTML}{FFF6DD}
+\definecolor{softblue}{HTML}{E8F1FA}
+\definecolor{softpurple}{HTML}{F1EBF8}
+\definecolor{softgray}{HTML}{F3F3F3}
+\definecolor{gold}{HTML}{C68B4E}
+
+% ---------- Headings ----------
+\titleformat{\section}{\Large\bfseries\color{robodark}}{}{0pt}{}
+\titlespacing*{\section}{0pt}{14pt}{6pt}
+\setcounter{secnumdepth}{0}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small\color{gray}Robo's Turning Numbers \textperiodcentered\ page \thepage}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+% ---------- Helpers ----------
+% A little robot
+\newcommand{\robo}[1][1]{%
+  \begin{tikzpicture}[scale=#1, baseline=-0.6ex]
+    \draw[robodark, line width=0.8pt] (0,0.55) -- (0,0.75);
+    \fill[flip] (0,0.78) circle (0.06);
+    \fill[robo] (-0.35,0.05) rectangle (0.35,0.55);
+    \fill[white] (-0.17,0.3) circle (0.08);
+    \fill[white] (0.17,0.3) circle (0.08);
+    \fill[robodark] (-0.17,0.3) circle (0.035);
+    \fill[robodark] (0.17,0.3) circle (0.035);
+    \fill[robodark] (-0.28,-0.5) rectangle (0.28,0.02);
+    \fill[robo] (-0.22,-0.75) rectangle (-0.08,-0.5);
+    \fill[robo] (0.08,-0.75) rectangle (0.22,-0.5);
+  \end{tikzpicture}}
+
+\newcommand{\blank}[1][3cm]{\underline{\hspace{#1}}}
+
+\newcounter{question}
+\newcommand{\question}{%
+  \refstepcounter{question}\par\needspace{3\baselineskip}%
+  \textbf{\color{robo}Question \arabic{question}.}~}
+
+\newtcolorbox{bigidea}[1][]{enhanced, colback=softyellow, colframe=gold,
+  boxrule=1pt, arc=3mm, left=8pt, right=8pt, top=6pt, bottom=6pt, #1}
+\newtcolorbox{tryit}{enhanced, colback=softblue, colframe=robo,
+  boxrule=0.8pt, arc=3mm, left=8pt, right=8pt}
+\newtcolorbox{mathclub}[1]{enhanced, colback=softpurple, colframe=itc,
+  boxrule=0.8pt, arc=3mm, left=8pt, right=8pt, top=4pt, bottom=4pt,
+  title={\textbf{#1}}, colbacktitle=itc, coltitle=white}
+
+\renewcommand{\arraystretch}{1.6}
+
+\begin{document}
+
+% ================= Title =================
+\begin{center}
+  {\robo[0.9]}\\[6pt]
+  {\Huge\bfseries\color{robodark} Robo's Turning Numbers}\\[4pt]
+  {\Large Imaginary Numbers and Euler's Equation}\\[6pt]
+  {\small\color{gray} October 31, 2026 \textperiodcentered\ Nathaniel}
+\end{center}
+
+\vspace{2pt}
+Name: \blank[6cm] \hfill Date: \blank[4cm]
+
+% ================= The story =================
+\section{The story}
+
+\textbf{\color{robo}Robo the Robot} lives on a number line. Robo stands on a number and faces
+the way the numbers grow. Robo knows two tricks: \textbf{walking} and \textbf{turning}.
+
+One day a mathematician asks Robo a very tricky riddle. To solve it, Robo will discover a
+whole new kind of number, and one of the most famous equations in all of math!
+
+% ================= Flip =================
+\section{Trick 1: times $-1$ means ``turn around''}
+
+\begin{center}
+\begin{tikzpicture}[x=0.95cm]
+  \draw[-{Stealth}, line width=1pt] (-5.6,0) -- (5.6,0);
+  \draw[{Stealth}-, line width=1pt] (-5.6,0) -- (0,0);
+  \foreach \n in {-5,...,5} {
+    \draw (\n,0.12) -- (\n,-0.12);
+    \node[below, font=\small] at (\n,-0.12) {$\n$};
+  }
+  \fill[robo] (3,0) circle (0.12);
+  \fill[flip] (-3,0) circle (0.12);
+  \draw[-{Stealth}, flip, line width=1pt] (3,0.25) to[bend right=40]
+    node[above, font=\small, black] {$\times(-1)$: turn around!} (-3,0.25);
+\end{tikzpicture}
+\end{center}
+
+\begin{bigidea}
+Multiplying by $-1$ is like Robo doing a \textbf{half turn}: Robo spins around to face the
+other way, and the number jumps to the other side of 0. So $3 \times (-1) = -3$.
+\end{bigidea}
+
+\question $4 \times (-1) = $ \blank[2cm]
+
+\vspace{4pt}
+\question Turn around \emph{two} times: $2 \times (-1) \times (-1) = $ \blank[2cm]\\[4pt]
+Which way is Robo facing now? \blank[3cm]
+
+\begin{tryit}
+\textbf{Try it!} Stand up and face the board. Do a half turn. Do another half turn. Which way
+are you facing?
+\end{tryit}
+
+% ================= Quarter turn =================
+\newpage
+\section{The tricky riddle}
+
+The mathematician asks: \emph{``Is there a number that, if you multiply by it \textbf{two}
+times, makes you turn around?''}
+
+\question Robo tries. Fill in the blanks.
+
+\begin{center}
+\begin{tabular}{l@{\hspace{2em}}l}
+$1 \times 1 = $ \blank[1.6cm] & Did Robo turn around? \blank[2cm] \\
+$(-1) \times (-1) = $ \blank[1.6cm] & Did Robo turn around? \blank[2cm] \\
+\end{tabular}
+\end{center}
+
+Nothing on the number line works! Robo needs a brand new idea.
+
+\section{Trick 2: the quarter turn, $i$}
+
+\begin{tryit}
+\textbf{Try it!} Do a half turn using \textbf{two quarter turns}: turn left a little (a quarter
+turn), then turn left again. You are facing backwards. It worked!
+\end{tryit}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+  \draw[-{Stealth}, line width=1pt] (-3.4,0) -- (3.4,0);
+  \draw[-{Stealth}, line width=1pt] (3.4,0) -- (-3.4,0);
+  \draw[-{Stealth}, line width=1pt, itc] (0,-3.4) -- (0,3.4);
+  \draw[-{Stealth}, line width=1pt, itc] (0,3.4) -- (0,-3.4);
+  \foreach \n in {-3,...,3} \draw (\n,0.1) -- (\n,-0.1);
+  \foreach \n in {-3,...,-1,1,2,3} \draw[itc] (0.1,\n) -- (-0.1,\n);
+  \node[below right, font=\small] at (2,0) {$2$};
+  \node[below left, font=\small] at (-2,0) {$-2$};
+  \node[right, font=\small, itc] at (0.1,2) {$2i$};
+  \node[right, font=\small, itc] at (0.1,-2) {$-2i$};
+  \fill[robo] (2,0) circle (0.12);
+  \fill[itc] (0,2) circle (0.12);
+  \fill[flip] (-2,0) circle (0.12);
+  \draw[-{Stealth}, itc, line width=1pt] (2.15,0.3) to[bend right=35]
+    node[above right, font=\small] {$\times i$} (0.3,2.15);
+  \draw[-{Stealth}, itc, line width=1pt] (-0.3,2.15) to[bend right=35]
+    node[above left, font=\small] {$\times i$} (-2.15,0.3);
+  \node[font=\small, align=center] at (4.6,2.5) {\textcolor{itc}{\textbf{new}}\\
+    \textcolor{itc}{\textbf{up-down line!}}};
+\end{tikzpicture}
+\end{center}
+
+\begin{bigidea}
+Mathematicians invented a new number called $\boldsymbol{i}$. Multiplying by $i$ is a
+\textbf{quarter turn} to the left. It makes Robo walk off the number line onto a new
+\textbf{up-down line}. Numbers on the up-down line are called \textbf{imaginary numbers}.
+
+Two quarter turns make a half turn, so \quad $i \times i = -1$. \quad Riddle solved!
+\end{bigidea}
+
+% ================= Turn table =================
+\newpage
+\section{The turning pattern}
+
+Robo starts at $1$ and keeps multiplying by $i$. Each time, Robo does one more quarter turn.
+Use the picture on the page before to fill in where Robo lands.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.7}
+\rowcolors{2}{white}{softpurple}
+\begin{tabular}{|>{\centering\arraybackslash}p{3.6cm}|>{\centering\arraybackslash}p{3.6cm}|>{\centering\arraybackslash}p{3.6cm}|}
+\hline
+\rowcolor{itc}
+\textbf{\color{white}Quarter turns} & \textbf{\color{white}Robo is at} & \textbf{\color{white}Pointing} \\
+\hline
+0 & $1$ & right \\ \hline
+1 & $i$ & up \\ \hline
+2 &     &    \\ \hline
+3 &     &    \\ \hline
+4 &     &    \\ \hline
+\end{tabular}
+\end{center}
+
+\question How many quarter turns bring Robo all the way back to $1$? \blank[2cm]
+
+\vspace{4pt}
+\question The pattern repeats! Where is Robo after 8 quarter turns? (Count by 4s.) \blank[2cm]
+
+% ================= Map =================
+\section{Robo's treasure map}
+
+Now numbers can go \textbf{sideways} and \textbf{up}! A number like $2 + 1i$ is an address:
+walk $2$ steps right, then $1$ step up.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.72]
+  \draw[step=1, gray!35] (-3.5,-3.5) grid (3.5,3.5);
+  \draw[-{Stealth}, line width=1pt] (-3.6,0) -- (3.8,0) node[right, font=\small] {sideways};
+  \draw[-{Stealth}, line width=1pt, itc] (0,-3.6) -- (0,3.8) node[above, font=\small] {up};
+  \foreach \n in {-3,...,-1,1,2,3} {
+    \node[below, font=\small] at (\n,0) {$\n$};
+    \node[left, font=\small, itc] at (0,\n) {$\n i$};
+  }
+  % treasures
+  \node[star, star points=5, fill=gold, draw=gold!60!black, minimum size=0.55cm, inner sep=0pt] at (2,1) {};
+  \node[font=\bfseries\small] at (2.35,1.4) {A};
+  \fill[flip] (-2,3) circle (0.22);
+  \node[font=\bfseries\small] at (-1.65,3.4) {B};
+  \fill[robo] (3,-2) ++(-0.2,-0.2) rectangle ++(0.4,0.4);
+  \node[font=\bfseries\small] at (3.35,-1.6) {C};
+\end{tikzpicture}
+\end{center}
+
+\question The star \textbf{A} is at $2 + 1i$. Write the address of the others.
+
+\begin{center}
+\textbf{B} (red circle): \blank[1.2cm] $+$ \blank[1.2cm]$\,i$
+\qquad
+\textbf{C} (blue square): \blank[1.2cm] $+$ \blank[1.2cm]$\,i$
+\end{center}
+
+\question Draw an \textbf{X} on the map at $1 + 3i$.
+
+% ================= Circle and Euler =================
+\newpage
+\section{Robo walks around a circle}
+
+\begin{tryit}
+\textbf{Try it!} Wrap a string once around a cup. Then see how many times the cup's width fits
+along the string.
+\end{tryit}
+
+\question About how many cup-widths long was the string? \blank[2cm]
+
+\begin{bigidea}
+It is always a little more than 3, for \emph{every} circle! That number is called
+\textbf{pi}, written $\boldsymbol{\pi}$. It is about $3.14$.
+
+If a circle is 2 steps wide, the path all the way around is $2\pi$ steps long, so
+\textbf{halfway around is exactly $\pi$ steps}.
+\end{bigidea}
+
+Robo starts at $1$ and walks around a circle that is 2 steps wide. Fill in the boxes with where
+Robo lands: $1$, $i$, $-1$, or $-i$.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.7]
+  \draw[-{Stealth}, line width=0.8pt] (-1.8,0) -- (1.8,0);
+  \draw[-{Stealth}, line width=0.8pt, itc] (0,-1.75) -- (0,1.85);
+  \draw[line width=1.4pt, robo] (0,0) circle (1);
+  \draw[-{Stealth}, line width=1.2pt, flip] (1.12,0.12) arc (6:174:1.12);
+  \node[flip, font=\small\bfseries, align=center] at (1.55,1.0) {halfway\\$= \pi$ steps};
+  \fill[robo] (1,0) circle (0.06);
+  \node[below right, font=\small] at (1,0) {start: $1$};
+  \fill (0,1) circle (0.05); \fill (-1,0) circle (0.05); \fill (0,-1) circle (0.05);
+  \node[draw, line width=0.8pt, minimum width=1.1cm, minimum height=0.75cm, fill=white] (q1) at (0,1.5) {};
+  \node[font=\small, left] at (q1.west) {quarter way:};
+  \node[draw, line width=0.8pt, minimum width=1.1cm, minimum height=0.75cm, fill=white] (q2) at (-1.5,-0.45) {};
+  \node[font=\small, below] at (q2.south) {halfway};
+  \node[draw, line width=0.8pt, minimum width=1.1cm, minimum height=0.75cm, fill=white] (q3) at (0,-1.45) {};
+  \node[font=\small, left] at (q3.west) {three-quarters way:};
+\end{tikzpicture}
+\end{center}
+
+\section{Euler's equation}
+
+\begin{mathclub}{How a scientist writes ``walk around the circle''}
+A mathematician named \textbf{Leonhard Euler} (say ``OY-ler'') found a way to write Robo's
+circle walk. There is a special number called $\boldsymbol{e}$, about $2.72$. When you write
+\[
+  e^{\,i\,\times\,\text{steps}}
+\]
+it means: \textbf{start at 1 and walk that many steps around the circle.}
+\end{mathclub}
+
+\question Walk $\pi$ steps (halfway around). Where does Robo land?
+\[
+  e^{\,i\pi} = \text{\blank[2cm]}
+\]
+
+\question Now add 1 to both sides. $\;-1 + 1 = $ \blank[1.6cm]. So:
+\[
+  e^{\,i\pi} + 1 = \text{\blank[2cm]}
+\]
+
+% ================= Five famous numbers =================
+\newpage
+\section{Five famous numbers in one equation}
+
+\begin{center}
+\begin{tcolorbox}[enhanced, width=0.7\linewidth, colback=softyellow, colframe=gold,
+  boxrule=1.2pt, arc=4mm, halign=center]
+{\Huge $e^{\,i\pi} + 1 = 0$}
+\end{tcolorbox}
+\end{center}
+
+Many mathematicians say this is the \textbf{most beautiful equation} in all of math, because it
+uses five famous numbers at once.
+
+\question Draw a line from each number to what it means.
+
+\begin{center}
+\begin{tikzpicture}
+  \foreach \y/\n in {0/$0$, -1.1/$1$, -2.2/$i$, -3.3/$\pi$, -4.4/$e$}
+    \node[draw=itc, line width=0.8pt, circle, minimum size=0.9cm, font=\Large] at (0,\y) {\n};
+  \foreach \y in {0,-1.1,-2.2,-3.3,-4.4} {
+    \fill (0.6,\y) circle (0.05);
+    \fill (5.4,\y) circle (0.05);
+  }
+  \foreach \y/\t in {0/{The quarter-turn number},
+                     -1.1/{Nothing at all},
+                     -2.2/{The special number for Euler's circle walk, about 2.72},
+                     -3.3/{Where Robo starts},
+                     -4.4/{How far halfway around the circle is, about 3.14}}
+    \node[right, text width=8.5cm, font=\small] at (5.6,\y) {\t};
+\end{tikzpicture}
+\end{center}
+
+\begin{tcolorbox}[enhanced, colback=white, colframe=robo, boxrule=1pt, arc=3mm,
+  height=5.5cm, title={\textbf{Draw it!}}, colbacktitle=robo, coltitle=white]
+Draw Robo walking halfway around the circle, from $1$ to $-1$. Write
+$e^{i\pi} = -1$ next to your picture.
+\end{tcolorbox}
+
+{\small\color{gray}\textbf{For teachers:} multiplying by $i$ rotates the complex plane by
+$90^\circ$ counterclockwise, which is why $i^2 = -1$ reads as two quarter turns making a half
+turn. Euler's formula $e^{i\theta} = \cos\theta + i\sin\theta$ places $e^{i\theta}$ on the unit
+circle at arc length $\theta$ from $1$ (counterclockwise), so $\theta = \pi$ lands on $-1$.
+Robo's ``circle 2 steps wide'' is the unit circle (radius 1), whose circumference is $2\pi$.
+Why $e$ in particular is the base that turns ``growth'' into ``rotation'' is a calculus fact
+($\tfrac{d}{d\theta}e^{i\theta} = i\,e^{i\theta}$: the velocity is always a quarter turn from
+the position) and is beyond this worksheet.}
+
+% ================= Answer key =================
+\newpage
+\section{Answer key}
+
+\begin{center}
+\rowcolors{2}{white}{softyellow}
+\begin{tabularx}{\linewidth}{|>{\centering\arraybackslash}p{2.8cm}|X|}
+\hline
+\rowcolor{robodark}
+\textbf{\color{white}Question} & \textbf{\color{white}Answer} \\ \hline
+1 & $-4$ \\ \hline
+2 & $2$; facing forward again (the way the numbers grow) \\ \hline
+3 & $1 \times 1 = 1$, no; $(-1)\times(-1) = 1$, no \\ \hline
+Turning table &
+  \begin{tabular}[t]{@{}lll@{}}
+    2 turns: & $-1$, & left \\
+    3 turns: & $-i$, & down \\
+    4 turns: & $1$, & right
+  \end{tabular} \\ \hline
+4 & 4 quarter turns \\ \hline
+5 & $1$ (8 is two groups of 4) \\ \hline
+6 & B is $-2 + 3i$; C is $3 + (-2)i$, which is also written $3 - 2i$ \\ \hline
+7 & X one step right, three steps up \\ \hline
+8 & A little more than 3 (about 3.14 if measured carefully) \\ \hline
+Circle boxes & Quarter way: $i$; halfway: $-1$; three-quarters: $-i$ \\ \hline
+9 & $-1$ \\ \hline
+10 & $0$; so $e^{i\pi} + 1 = 0$ \\ \hline
+11 & $0$: nothing at all; $1$: where Robo starts; $i$: the quarter-turn number;
+     $\pi$: halfway around, about 3.14; $e$: Euler's special number, about 2.72 \\ \hline
+\end{tabularx}
+\end{center}
+
+\end{document}

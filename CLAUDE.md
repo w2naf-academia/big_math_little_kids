@@ -1,36 +1,59 @@
-# {{PROJECT_NAME}}
+# Big Math, Little Kids
 
 ## Project Overview
-{{ONE-PARAGRAPH PROJECT DESCRIPTION — what is being written or built, its purpose, and audience.}}
+Printable worksheets that teach big mathematical ideas, such as differential equations, related
+rates, imaginary numbers and Euler's equation, to second graders. Each worksheet tells a story,
+uses hands-on activities, skip counting and pictures in place of algebra, and ends with an answer
+key on its own page. Worksheets are typeset in LaTeX so tables and figures stay where they belong
+when printed. The audience is second graders and the teachers and parents who work with them.
 
-**PI**: {{PI_NAME_AND_AFFILIATION}}
-**Collaborators**: {{COLLABORATORS}}
-**Funder**: {{FUNDER}}{{FUNDING_AMOUNT_OPTIONAL}}
-**Project period**: {{PROJECT_PERIOD}}
+**PI**: Nathaniel A. Frissell (W2NAF), University of Scranton
+**Collaborators**: None
+**Funder**: None (personal project)
+**Project period**: Ongoing, since October 2026
 
 ## Project Goal
-{{PROJECT_GOAL — 1-3 sentences.}}
+Show that young children can understand the ideas behind advanced mathematics when they are
+framed as stories, motion and counting, and produce worksheets anyone can print and use.
 
 ## Repository Structure
-This project starts from the `ai_project_template` scaffold. Add or remove top-level directories to match your project type. The scaffold expects:
+This project starts from the `ai_project_template` scaffold.
 
 ```
-{{REPO_NAME}}/
+big_math_little_kids/
 ├── CLAUDE.md
-├── README.md
+├── README.md                     ← public overview and list of worksheets
 ├── .gitignore
-├── .gitmodules                   ← present only if you add submodules
 ├── .claude/
-│   ├── settings.json
+│   ├── settings.json             ← registers the template-check hook
+│   ├── template.json             ← which template commit was last adopted
+│   ├── hooks/template_check.sh
 │   ├── commands/commit.md        ← /commit workflow
+│   ├── commands/template-sync.md ← /template-sync workflow
 │   └── rules/
 │       ├── ai-governance.md
-│       ├── latex-writing.md      ← delete if no LaTeX
-│       └── python-code.md        ← delete if no Python
+│       └── latex-writing.md
 ├── ai/
 │   └── ai_usage_log.md           ← mandatory AI session log
-└── {{PROJECT-SPECIFIC FOLDERS}}  ← e.g., manuscript/, src/, posters/, proposal/
+└── worksheets/
+    └── <worksheet_name>/         ← one folder per worksheet: <worksheet_name>.tex and .pdf
 ```
+
+## Worksheet Conventions
+- One folder per worksheet under `worksheets/`, holding `<name>.tex` and its compiled `<name>.pdf`,
+  committed together and rebuilt in the same commit.
+- Build with `pdflatex` run twice in the worksheet folder; only standard TeX Live packages
+  (TikZ, tcolorbox, tabularx, titlesec, fancyhdr). Figures are drawn in TikZ inside the `.tex`.
+- Zero errors and zero overfull boxes before committing. Check every page visually: tables,
+  diagrams and boxes must not overlap or spill onto a page of their own.
+- Kid-facing pages: short sentences, a story character, numbered questions with write-in blanks,
+  "Try it!" activities. Any notation is introduced as "how a scientist writes it" and tied to an
+  answer the child already found.
+- Teacher-facing material is kept small: a gray "For teachers" note where needed, and the answer
+  key on its own final page so it can be left out of student copies.
+- Mathematics must be correct even when simplified; say in the teacher note what was simplified.
+- Avoid trademarked characters in new worksheets. The Cookie Countdown's Sesame Street framing
+  came from the original draft.
 
 ## Curated Documents
 

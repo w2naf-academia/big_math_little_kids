@@ -1,51 +1,36 @@
-# AI Project Template
+# Big Math, Little Kids
 
-A starter scaffold for AI-assisted writing or coding projects in Dr. Nathaniel A. Frissell's (W2NAF) academic and HamSCI portfolio. The template enforces compliance with University of Scranton, HamSCI, NASA, and NSF policies on generative AI use, and provides a `/commit` workflow that logs every substantive AI session before committing.
+Printable worksheets that teach big mathematical ideas to second graders: differential
+equations, related rates, imaginary numbers and Euler's equation. Each one tells a story and
+uses counting, pictures and hands-on activities in place of algebra. Every worksheet ends with an
+answer key on its own page.
 
-The same scaffold supports:
-- **Writing projects** (papers, proposals, annual reports, theses) — typically with an `overleaf/` submodule
-- **Coding projects** (research software, dashboards, analysis pipelines) — flat or with one or more code submodules
-- **Mixed projects** — both, in any combination
+## Worksheets
 
-## Use as a GitHub Template
+| Worksheet | Big idea | PDF |
+| --- | --- | --- |
+| **The Cookie Countdown** | Rates, a first differential equation (dC/dt = −20), and related rates through chocolate chips | [cookie_countdown.pdf](worksheets/cookie_countdown/cookie_countdown.pdf) |
+| **Robo's Turning Numbers** | Multiplying by −1 and *i* as turns, the complex plane as a treasure map, π from a cup and string, and e<sup>iπ</sup> + 1 = 0 | [robos_turning_numbers.pdf](worksheets/robos_turning_numbers/robos_turning_numbers.pdf) |
+
+Print the PDFs directly. To leave the answers out of student copies, skip the last page.
+
+## Building from source
+
+Each worksheet is a single LaTeX file with its figures drawn in TikZ. With TeX Live installed:
 
 ```bash
-gh repo create my-new-project --template w2naf-academia/ai_project_template --private --clone
+cd worksheets/cookie_countdown
+pdflatex cookie_countdown.tex
+pdflatex cookie_countdown.tex
 ```
 
-or click **Use this template** on the GitHub repository page.
+## How these were made
 
-## After Instantiation
+The worksheets were written with AI assistance (Claude, by Anthropic) and reviewed by
+Nathaniel A. Frissell (W2NAF), University of Scranton. Every AI-assisted session is recorded in
+[`ai/ai_usage_log.md`](ai/ai_usage_log.md). The Cookie Countdown began as a Markdown draft, kept
+in [`original_markdown_draft.md`](worksheets/cookie_countdown/original_markdown_draft.md); it was
+moved to LaTeX because tables and positions broke when the Markdown was exported to PDF.
 
-1. **Replace placeholders.** Search the repo for `{{` and replace every `{{PLACEHOLDER}}` in `CLAUDE.md`, `.claude/rules/ai-governance.md`, and `ai/ai_usage_log.md`. Common placeholders:
-   - `{{PROJECT_NAME}}`, `{{PROJECT_TITLE}}`, `{{PROJECT_GOAL}}`, `{{PROJECT_PERIOD}}`
-   - `{{PI_NAME_AND_AFFILIATION}}`, `{{COLLABORATORS}}`, `{{FUNDER}}`, `{{FUNDING_AMOUNT_OPTIONAL}}`
-   - `{{REPO_NAME}}`
-2. **Prune optional rule files.** Delete the rule files that don't apply:
-   - `rm .claude/rules/latex-writing.md` if no LaTeX
-   - `rm .claude/rules/python-code.md` if no Python code
-3. **Add project-specific top-level folders** (e.g., `manuscript/`, `src/`, `posters/`, `proposal/`, `media/`).
-4. **Add submodules if needed.**
-   - Overleaf manuscript: `git submodule add https://git.overleaf.com/<id> overleaf`
-   - External code repo: `git submodule add git@github.com:org/repo.git <path>`
-5. **Customize `.claude/rules/ai-governance.md`** — fill in the `{{FUNDER}}`-specific expectations section, or delete it if the project is unfunded.
-6. **Commit and push** the instantiated project to its own GitHub repo. This initial push seeds `main`; every change after it goes through a feature branch and pull request (see `CLAUDE.md` § Git Workflow).
-
-### Record which template commit you started from
-
-`.claude/template.json` arrives describing this template. Turn it into a project record: set
-`"role": "project"`, `"upstream": "w2naf-academia/ai_project_template"`, `"upstream_branch": "main"`, `"synced_commit"` to the
-template commit you instantiated from (the tip of `main` that day), and `"synced_on"`; list in
-`"customized"` the files whose placeholders you filled in, and in `"not_adopted"` any template
-files you deleted; remove `repo` and `siblings`. From then on, a session-start check reports when
-this template changes and `/template-sync` adopts the changes. If you skip this step, the first
-Claude session notices and offers to do it.
-
-## What This Template Provides
-
-- **`CLAUDE.md`** — top-level project instructions consumed automatically by Claude Code, with placeholders for project specifics.
-- **`.claude/rules/ai-governance.md`** — standing AI-use policies (Scranton, HamSCI, NASA, NSF) plus a funder-specific section.
-- **`.claude/commands/commit.md`** — the `/commit` slash command that logs the AI session, then commits each changed repo (submodules first) on a feature branch and opens a pull request for human review and merge. Auto-detects submodules.
-- **`ai/ai_usage_log.md`** — append-only log of every substantive AI-assisted session.
-- **`.gitignore`** — generic LaTeX + Python build artifacts.
-- **Optional rule files** for LaTeX writing and Python code, with "delete if unused" headers.
+This repository follows the
+[`ai_project_template`](https://github.com/w2naf-academia/ai_project_template) scaffold.
