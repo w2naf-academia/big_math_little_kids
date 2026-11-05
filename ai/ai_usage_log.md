@@ -21,4 +21,4 @@ Required per University of Scranton AI Policy, HamSCI Generative AI Use Agreemen
 - **Nature of Contribution**: Draft (worksheets, LaTeX typesetting, TikZ figures), edit
   (template instantiation)
 - **Human Review Status**: Partially reviewed
-- **Git Hash**: [filled in after committing]
+- **Git Hash**: c9fb330 (PR w2naf-academia/big_math_little_kids#1)
