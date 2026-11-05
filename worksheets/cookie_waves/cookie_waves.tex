@@ -99,12 +99,14 @@ Name: \blank[6cm] \hfill Date: \blank[4cm]
 % ================= The story =================
 \section{The story}
 
-In The Cookie Circle, \textbf{\color{elmo}Elmo} walked around the edge of Cookie Monster's
-giant cookie. Now Elmo keeps walking, around and around, at the same speed.
-\textbf{\color{count}The Count} shines a flashlight from the side, so Elmo's
-\textbf{shadow} moves up and down on the wall.
+Remember Cookie Monster's giant cookie from The Cookie Circle? Now he has stood it up on its
+edge and made it into a \textbf{Cookie Ferris Wheel}! It turns around and around at the same
+speed. \textbf{\color{elmo}Elmo} rides in a seat on the edge.
 
-\emph{``Elmo is going around and around. But Elmo's shadow goes up and down!''}
+The sun shines in from the side, so Elmo's \textbf{shadow} lands on a wall. As the wheel turns,
+the shadow \textbf{slides up and down} the wall. It never gets bigger or smaller: it is always
+level with Elmo. \textbf{\color{count}The Count} points: \emph{``Elmo goes around and around.
+But his shadow goes up and down! Ah ah ah!''}
 
 That up-and-down shadow is a \textbf{wave}. Radios, phones, Wi-Fi, light, and sound are all
 made of waves like this. Let's draw one.
@@ -112,13 +114,18 @@ made of waves like this. Let's draw one.
 % ================= Elmo's shadow =================
 \section{Elmo's shadow on the wall}
 
-The cookie is drawn on a grid. Its edge is \textbf{4 squares} from the middle. Elmo starts at
-spot \textbf{0} and walks around to the left (up first), stopping at each numbered spot. Each
-spot is \textbf{one eighth} of a lap. The dashed lines show his shadow's height on the wall.
+Here is the wheel from the front, drawn on a grid. Its edge is \textbf{4 squares} from the
+middle. Elmo's seat starts at spot \textbf{0}, level with the middle, and the wheel turns so he
+goes \textbf{up} first. Each spot is \textbf{one eighth} of a lap. We measure Elmo's
+\textbf{height} from the middle of the wheel: above the middle is plus, below is minus. The
+dashed lines show that his shadow on the wall is always at the same height as Elmo.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.5]
   \draw[step=1, gray!30] (-5,-5) grid (5,5);
+  % stand and ground
+  \draw[cookiedark, line width=2pt] (0,0) -- (-2.2,-5.6) (0,0) -- (2.2,-5.6);
+  \draw[line width=1pt] (-6,-5.6) -- (8.6,-5.6);
   \fill[cookie] (0,0) circle (4);
   \foreach \x/\y in {-1.5/1.4, 1.2/2.1, 2.2/-1, -0.8/-2.4, -2.6/-0.4, 0.4/0.4, 1.3/-2.8, -1.8/2.8, 2.9/1.1, -3/1.6}
     \fill[chip] (\x,\y) circle (0.22);
@@ -137,21 +144,27 @@ spot is \textbf{one eighth} of a lap. The dashed lines show his shadow's height 
   \foreach \k in {0,...,7} {
     \pgfmathsetmacro{\a}{45*\k}
     \fill[elmo] ({4*cos(\a)},{4*sin(\a)}) circle (0.25);
-    \node[font=\small\bfseries, elmo] at ({4.8*cos(\a)},{4.8*sin(\a)}) {\k};
+    \node[font=\small\bfseries, elmo] at ({4.75*cos(\a+12)},{4.75*sin(\a+12)}) {\k};
   }
   \foreach \k in {1,2,3} {
     \pgfmathsetmacro{\a}{45*\k}
     \draw[dashed, elmo] ({4*cos(\a)},{4*sin(\a)}) -- (8,{4*sin(\a)});
+    \fill[black!75] (8.3,{4*sin(\a)}) ellipse (0.22 and 0.3);
   }
-  % flashlight
-  \node[font=\small, align=center, count] at (-7.6,0) {The Count's\\flashlight};
-  \draw[-{Stealth}, count, line width=1pt] (-6.2,1.2) -- (-5.4,1.2);
-  \draw[-{Stealth}, count, line width=1pt] (-6.2,-1.2) -- (-5.4,-1.2);
+  \node[right, font=\scriptsize, align=left] at (8.6,4*0.7071) {shadows};
+  \fill[cookiedark] (0,0) circle (0.2);
+  % sun
+  \fill[gold!80!yellow] (-8,2.5) circle (0.8);
+  \foreach \t in {0,45,...,315}
+    \draw[gold!80!yellow, line width=1pt] ({-8+1.05*cos(\t)},{2.5+1.05*sin(\t)}) -- ({-8+1.45*cos(\t)},{2.5+1.45*sin(\t)});
+  \node[font=\small, align=center] at (-8,0.4) {sunlight};
+  \foreach \y in {1.2,-0.4,-2} \draw[-{Stealth}, gold!70!black, line width=1pt] (-6.8,\y) -- (-5.4,\y);
 \end{tikzpicture}
 \end{center}
 
-\question Fill in Elmo's shadow height at each spot. Use the grid and the wall. (Spots 1, 3, 5
-and 7 are a little less than 3 squares, so write ``about 3.'')
+\newpage
+\question Fill in Elmo's height at each spot. It is also where his shadow is on the wall. (Spots
+1, 3, 5 and 7 are a little less than 3 squares, so write ``about 3.'')
 
 \begin{center}
 \renewcommand{\arraystretch}{1.5}
@@ -166,7 +179,6 @@ and 7 are a little less than 3 squares, so write ``about 3.'')
 {\small Spot 8 is back at the start: one whole lap!}
 
 % ================= Draw the wave =================
-\newpage
 \section{Draw the wave}
 
 \question Put a \textbf{\color{elmo}red} dot for each height from your table: spot number across,
@@ -183,7 +195,7 @@ height up. Then connect the dots with a smooth, curvy line.
 
 \begin{bigidea}
 Going \textbf{around} a circle makes a \textbf{wave} that goes \textbf{up and down}! This wave
-has a name: the \textbf{sine wave} (say ``sign''). Every lap around the cookie draws one more
+has a name: the \textbf{sine wave} (say ``sign''). Every lap of the wheel draws one more
 bump up and one more dip down.
 \end{bigidea}
 
@@ -195,11 +207,11 @@ bump up and one more dip down.
 \hline
 \rowcolor{cookiedark}
 \textbf{\color{white}Word} & \textbf{\color{white}What it means for Elmo} \\ \hline
-Amplitude & How \textbf{tall} the wave is. It is the size of the cookie: how far the edge is
+Amplitude & How \textbf{tall} the wave is. It is the size of the wheel: how far the edge is
 from the middle. \\ \hline
-Frequency & How many \textbf{laps} Elmo walks every second. The Count counts them:
+Frequency & How many \textbf{laps} the wheel turns every second. The Count counts them:
 \emph{``ONE lap! TWO laps! THREE laps in one second! Ah ah ah!''} That is 3 \textbf{hertz}. \\ \hline
-Phase & \textbf{Where on the circle} you are, or how far \textbf{ahead} one walker is of another.
+Phase & \textbf{Where on the wheel} you are, or how far \textbf{ahead} one rider is of another.
 We measure it in turns, or in degrees: a whole turn is $360^\circ$. \\ \hline
 \end{tabularx}
 \end{center}
@@ -209,14 +221,14 @@ We measure it in turns, or in degrees: a whole turn is $360^\circ$. \\ \hline
 
 \vspace{4pt}
 \question A radio station at 100 megahertz makes its wave go around \textbf{100 million} laps
-every second! If Elmo walks 5 laps in one second, his frequency is \blank[1.5cm] hertz.
+every second! If Elmo's wheel turns 5 laps in one second, his frequency is \blank[1.5cm] hertz.
 
 % ================= Phase =================
-\newpage
 \section{Phase: Abby starts ahead}
 
-\textbf{\color{abby}Abby Cadabby} wants to walk too. But Abby starts at spot \textbf{2}, at the
-\textbf{top} of the cookie, a \textbf{quarter turn ahead} of Elmo. They walk at the same speed.
+\textbf{\color{abby}Abby Cadabby} rides too. Her seat starts at spot \textbf{2}, at the
+\textbf{top} of the wheel, a \textbf{quarter turn ahead} of Elmo. They go around together on the
+same wheel.
 
 \question Fill in Abby's height when Elmo is at each spot. (Abby is always 2 spots ahead.)
 
@@ -268,11 +280,10 @@ whole turn & \\ \hline
 \end{center}
 
 % ================= Oscar cancels =================
-\newpage
 \section{Oscar's opposite wave}
 
-\textbf{\color{oscar}Oscar the Grouch} starts at spot \textbf{4}, a \textbf{half turn}
-($180^\circ$) ahead. When Elmo's shadow goes up, Oscar's goes down. \emph{``Scram!''}
+\textbf{\color{oscar}Oscar the Grouch} rides in the seat at spot \textbf{4}, a \textbf{half turn}
+($180^\circ$) ahead. When Elmo goes up, Oscar goes down. \emph{``Scram!''}
 
 \question Fill in Oscar's heights, then \textbf{add} Elmo's and Oscar's heights together.
 
@@ -297,7 +308,7 @@ together (\textbf{in phase}) \textbf{add up} to a bigger wave. This is called
 \textbf{interference}.
 \end{bigidea}
 
-\question Elmo's twin walks right next to him, in phase. Add their heights at spot 2:
+\question Elmo's twin rides in the same seat as Elmo, in phase. Add their heights at spot 2:
 $4 + 4 = $ \blank[1.5cm]. The new wave is \blank[2cm] (taller or shorter?).
 
 \begin{radiobox}{How engineers use phase}
@@ -315,13 +326,14 @@ $4 + 4 = $ \blank[1.5cm]. The new wave is \blank[2cm] (taller or shorter?).
 \section{Back to Euler's equation}
 
 \begin{mathclub}{The Count's Math Club: Euler's wave equation}
-In The Cookie Circle, $e^{\,j\,\times\,\text{steps}}$ meant ``walk that many steps around the
+In The Cookie Circle, $e^{\,j\,\times\,\text{steps}}$ meant ``go that many steps around the
 circle.'' Engineers write the steps as $\theta$ (the Greek letter ``theta''). Euler showed:
 \[
   e^{j\theta} = \underbrace{\cos\theta}_{\text{floor shadow}} \;+\; j\,\underbrace{\sin\theta}_{\text{wall shadow}}
 \]
-The \textbf{wall shadow} is the sine wave you drew. The \textbf{floor shadow} (a flashlight from
-above) is the \textbf{cosine wave}, which is Abby's wave! Radio engineers call these two shadows
+The \textbf{wall shadow} (sun from the side) goes up and down: it is the sine wave you drew.
+When the sun is straight \textbf{overhead}, Elmo's shadow lands on the \textbf{floor} and slides
+side to side. That is the \textbf{cosine wave}, and it is the same as Abby's wave! Radio engineers call these two shadows
 \textbf{I} and \textbf{Q}.
 \end{mathclub}
 
@@ -339,7 +351,7 @@ upside down, and why Elmo $+$ Oscar $= 0$.
 \quad A half turn? \blank[1.5cm]
 
 \begin{center}
-\begin{tikzpicture}[scale=0.85]
+\begin{tikzpicture}[scale=0.6]
   \draw[cookiedark, line width=1pt] (0,0) circle (2);
   \draw[-{Stealth}, line width=0.8pt] (-2.6,0) -- (2.8,0);
   \draw[-{Stealth}, line width=0.8pt] (0,-2.6) -- (0,2.8);
@@ -352,19 +364,24 @@ upside down, and why Elmo $+$ Oscar $= 0$.
 \end{center}
 
 \begin{bigidea}
-Engineers draw each wave as an \textbf{arrow} on the cookie, called a \textbf{phasor}. The arrow's
+Engineers draw each wave as an \textbf{arrow} on the wheel, called a \textbf{phasor}. The arrow's
 \textbf{length} is the amplitude. The arrow's \textbf{direction} is the phase. As time goes by,
-all the arrows spin around together, like Elmo, Abby, and Oscar walking. One arrow tells you
+all the arrows spin around together, like Elmo, Abby, and Oscar riding the wheel. One arrow tells you
 everything about a wave!
 \end{bigidea}
 
 \begin{tcolorbox}[enhanced, colback=white, colframe=monster, boxrule=1pt, arc=3mm,
-  height=4.3cm, title={\textbf{Draw it!}}, colbacktitle=monster, coltitle=white]
-Draw a cookie with three arrows for Elmo, Abby, and Oscar. Next to it, draw their three waves.
+  height=3cm, title={\textbf{Draw it!}}, colbacktitle=monster, coltitle=white]
+Draw a cookie wheel with three arrows for Elmo, Abby, and Oscar. Next to it, draw their three waves.
 \end{tcolorbox}
 
-{\small\color{gray}\textbf{For teachers:} Elmo's position after angle $\theta = \omega t$ is
-$4e^{j\omega t}$; his wall shadow is $4\sin\omega t$ (the quadrature, Q, component) and the floor
+% ================= Answer key =================
+\newpage
+\section{Answer key}
+
+{\small\color{gray}\textbf{For teachers:} the wheel is vertical and seen face-on, and sunlight
+makes the rays parallel, so each shadow is an exact projection. Elmo's position after angle
+$\theta = \omega t$ is $4e^{j\omega t}$; his wall shadow is $4\sin\omega t$ (the quadrature, Q, component) and the floor
 shadow is $4\cos\omega t$ (in-phase, I). The heights at the eighth-turn spots are $4\sin 45^\circ
 \approx 2.83$, written ``about 3.'' Abby's wave $4\sin(\omega t + 90^\circ) = 4\cos\omega t$
 equals the imaginary part of $j \cdot 4e^{j\omega t}$: a phase shift $\phi$ is multiplication of
@@ -373,9 +390,6 @@ interference. The radio examples are noise cancellation, phased arrays, and phas
 Sesame Street characters appear by name only, for classroom use; this worksheet is not affiliated
 with or endorsed by Sesame Workshop.}
 
-% ================= Answer key =================
-\newpage
-\section{Answer key}
 
 \begin{center}
 \rowcolors{2}{white}{softyellow}

@@ -57,3 +57,15 @@ Required per University of Scranton AI Policy, HamSCI Generative AI Use Agreemen
 - **Nature of Contribution**: Draft (worksheet, TikZ figures)
 - **Human Review Status**: Partially reviewed
 - **Git Hash**: 7b85320 (PR w2naf-academia/big_math_little_kids#4)
+
+## [2026-11-04 23:27 EST]
+- **Tool**: Claude (Anthropic), claude-opus-5-5 (1M context)
+- **Session Purpose**: Fix Elmo's Cookie Waves after N. A. Frissell's review: a flat cookie
+  seen from above makes the shadow slide sideways along the wall, not up and down, and
+  "shadow height" read as the shadow's size. Recast as a vertical Cookie Ferris Wheel lit by
+  sunlight (parallel rays), so the wall shadow moves up and down level with Elmo and the floor
+  shadow (sun overhead) gives the cosine / I component.
+- **Sections/Files Affected**: `worksheets/cookie_waves/cookie_waves.tex` and `.pdf`, `README.md`
+- **Nature of Contribution**: Edit (text, figure, layout)
+- **Human Review Status**: Partially reviewed
+- **Git Hash**: e760807 (PR w2naf-academia/big_math_little_kids#5)
