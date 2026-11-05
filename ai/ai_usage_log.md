@@ -45,4 +45,4 @@ Required per University of Scranton AI Policy, HamSCI Generative AI Use Agreemen
   `README.md` (teaching order)
 - **Nature of Contribution**: Draft (worksheets, TikZ figures), edit
 - **Human Review Status**: Partially reviewed
-- **Git Hash**: [filled in after committing]
+- **Git Hash**: 3298292 (PR w2naf-academia/big_math_little_kids#3)
